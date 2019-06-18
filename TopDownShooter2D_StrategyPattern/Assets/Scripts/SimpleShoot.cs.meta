@@ -4,10 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - explosion: {fileID: 8256744068763095116, guid: e89b5c894dee1ab488244dd2ffbfdd81,
-      type: 3}
-  - bullet: {fileID: 2664883136507623913, guid: 59386fc7e32f02540b33ec1f62d55d12,
-      type: 3}
+  - explosion: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

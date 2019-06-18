@@ -18,4 +18,9 @@ public class BulletController : MonoBehaviour
             explosion.transform.rotation = transform.rotation;
         }
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -17,7 +17,7 @@ public class PlayerMobility : MonoBehaviour
     private Quaternion rot;
     private Rigidbody2D rb2;
     private IWeapon weapon;
-    public WeaponType weaponType;
+    //public WeaponType weaponType;
 
     private void Start()
     {
