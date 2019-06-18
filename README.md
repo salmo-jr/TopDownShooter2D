@@ -5,3 +5,5 @@ https://unity3d.com/pt/learn/tutorials/topics/2d-game-creation/top-down-2d-game-
 https://www.youtube.com/watch?v=wkKsl1Mfp5M
 https://www.youtube.com/watch?v=1QOsUrXWMWY
 https://www.youtube.com/watch?v=npSkMTEe2BI
+
+Assets from: 2D Scrolling Shooter
