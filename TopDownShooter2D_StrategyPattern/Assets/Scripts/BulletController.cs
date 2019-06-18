@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    [SerializeField] private float speed;
     [SerializeField] private sbyte damage;
-    [SerializeField] private GameObject explosion;
-
-    private Rigidbody2D rb2;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb2 = GetComponent<Rigidbody2D>();
-        rb2.velocity = transform.up * speed;
-    }
+    //[SerializeField] private GameObject explosion;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +13,9 @@ public class BulletController : MonoBehaviour
         {
             collision.GetComponent<EnemyMobility>().TakeDamage(damage);
             Destroy(gameObject);
-            Instantiate(explosion, transform.position, transform.rotation);
+            GameObject explosion = Instantiate(Resources.Load("Explosion", typeof(GameObject))) as GameObject;
+            explosion.transform.position = transform.position;
+            explosion.transform.rotation = transform.rotation;
         }
     }
 }

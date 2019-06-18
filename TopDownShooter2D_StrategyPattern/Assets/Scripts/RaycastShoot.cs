@@ -29,7 +29,11 @@ public class RaycastShoot : Weapon, IWeapon
             if (hitInfo.transform.gameObject.CompareTag("Enemy"))
             {
                 hitInfo.transform.gameObject.GetComponent<EnemyMobility>().TakeDamage(damage);
-                Instantiate(explosion, hitInfo.point, Quaternion.identity);
+                //Instantiate(base.explosion, hitInfo.point, Quaternion.identity);
+
+                GameObject explosion = Instantiate(Resources.Load("Explosion", typeof(GameObject))) as GameObject;
+                explosion.transform.position = hitInfo.point;
+                explosion.transform.rotation = hitInfo.transform.rotation;
 
                 line.SetPosition(0, firePoint.position);
                 line.SetPosition(1, hitInfo.point);

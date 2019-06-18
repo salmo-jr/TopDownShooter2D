@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     [SerializeField] protected GameObject explosion;
     [SerializeField] protected sbyte damage;
+
+    public sbyte getDamage() { return damage; }
     
 }

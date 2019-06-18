@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7882808239627933792}
   - component: {fileID: 7529817188317929762}
   - component: {fileID: 5373439909132337802}
-  - component: {fileID: 4797574302210354677}
+  - component: {fileID: 790467923047834570}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Weapom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.03, y: 0.16}
   m_Direction: 0
---- !u!114 &4797574302210354677
+--- !u!114 &790467923047834570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce949a1890fa3434495ad0c56be18b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  damage: 40
+  speed: 10
+  damage: 30
   explosion: {fileID: 8256744068763095116, guid: e89b5c894dee1ab488244dd2ffbfdd81,
     type: 3}

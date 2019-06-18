@@ -25,6 +25,8 @@ public class EnemyMobility : MonoBehaviour
         rb2.AddForce(gameObject.transform.up * speed);
     }
 
+    
+
     public void TakeDamage(sbyte damage)
     {
         health -= damage;

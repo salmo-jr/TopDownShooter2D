@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum WeaponType
+{
+    Bullet,
+    Raycast
+}
+
 public class PlayerMobility : MonoBehaviour
 {
     public float speed;
@@ -11,11 +17,12 @@ public class PlayerMobility : MonoBehaviour
     private Quaternion rot;
     private Rigidbody2D rb2;
     private IWeapon weapon;
+    public WeaponType weaponType;
 
     private void Start()
     {
         rb2 = GetComponent<Rigidbody2D>();
-        SetWeapon(new RaycastShoot());
+        SetWeapon("Pickup");
     }
 
     // Update is called once per frame
@@ -36,8 +43,36 @@ public class PlayerMobility : MonoBehaviour
         rb2.AddForce(gameObject.transform.up * moveForward * speed);
     }
 
-    public void SetWeapon(IWeapon weapon)
+    public void SetWeapon(string tag)
     {
-        this.weapon = weapon;
+        switch (tag)
+        {
+            case "Pickup":
+                RemoveWeapom();
+                this.weapon = gameObject.AddComponent<SimpleShoot>();
+                break;
+            case "Ufo":
+                RemoveWeapom();
+                this.weapon = gameObject.AddComponent<RaycastShoot>();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void RemoveWeapom()
+    {
+        //To prevent Unity from creating multiple copies of the same component in inspector at runtime
+        Component c = gameObject.GetComponent<IWeapon>() as Component;
+
+        if (c != null)
+        {
+            Destroy(c);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        SetWeapon(collision.tag);
     }
 }
