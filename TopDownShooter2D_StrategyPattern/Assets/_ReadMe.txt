@@ -1,3 +1,5 @@
+based on http://www.theappguruz.com/blog/learn-strategy-pattern-in-unity-in-less-than-15-minutes
+
 
 This game is based on the tutorial from Unity Japan:
 http://japan.unity3d.com/developer/document/tutorial/2d-shooting-game-en/intro.html
